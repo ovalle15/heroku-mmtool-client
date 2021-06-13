@@ -86,7 +86,7 @@ class TableComp extends React.Component {
                         <TableBody>
                         { this.state.rows ? this.state.rows.map((row) => (
                             <Row key={row.item} row={row} />
-                        )) : {}
+                        )) : ""
                         }
                         </TableBody>
                     </Table>

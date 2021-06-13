@@ -9,7 +9,7 @@
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "node index.js",
-      "build": "cd client-side/ && yarn install && yarn run build"
+      "build": "cd client-side/ && yarn install  --legacy-peer-dep && yarn run build"
     },
     "keywords": [],
     "author": "Andrea Ovalle",
@@ -19,7 +19,10 @@
         "@material-ui/icons": "^4.11.2",
         "axios": "^0.21.1",
         "bootstrap": "^4.6.0",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
         "classnames": "^2.2.6",
+        "express": "^4.17.1",
         "is-empty": "^1.2.0",
         "jquery": "^3.6.0",
         "js-yaml": "^4.1.0",
@@ -32,7 +35,7 @@
         "react-icons": "^4.2.0",
         "react-redux": "^7.2.4",
         "react-router-dom": "^5.2.0",
-        "react-scripts": "^4.0.3",
+        "react-scripts": "^1.1.5",
         "redux": "^4.1.0",
         "redux-thunk": "^2.3.0",
         "styled-components": "^5.2.1",

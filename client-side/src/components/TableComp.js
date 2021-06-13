@@ -28,11 +28,16 @@ class TableComp extends React.Component {
         this.setState({needsRefresh : !this.state.needsRefresh})
         const tb = api.getAllItems()
         return tb.then(resp => {
-           const table = resp.data.items;
-           this.setState({
-               needsRefresh: !this.state.needsRefresh,
-               rows: table
-           })
+        if (resp) {
+            const table = resp.data.items;
+            this.setState({
+                needsRefresh: !this.state.needsRefresh,
+                rows: table
+                })
+            }
+        }).catch(err=> {
+            console.error(err);
+            return err;
         })
     }
 

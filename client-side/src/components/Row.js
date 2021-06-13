@@ -16,6 +16,8 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { BiCloudDownload }  from 'react-icons/bi';
 import Chip from '@material-ui/core/Chip';
 import Table from '@material-ui/core/Table'
+import { NavLink } from 'react-router-dom';
+import { routes } from '../routes';
 
 
 export default class Row extends React.Component {
@@ -57,16 +59,16 @@ export default class Row extends React.Component {
     getLastIndexFromHistory() {
         const history = this.state.row.row.history
         return history[history.length - 1]
-        
+
     }
     sortHistory () {
         const toSort = this.state.row.row.history
         const sorted = toSort.sort(function(a, b){
-            var d1 = new Date(a.date) 
+            var d1 = new Date(a.date)
             var d2 = new Date(b.date)
-            return d2 - d1 
+            return d2 - d1
         })
-        // return the first five elements 
+        // return the first five elements
         return sorted.slice(0, 5)
     }
     render() {
@@ -109,8 +111,8 @@ export default class Row extends React.Component {
 
         return (
             <React.Fragment>
-              <TableRow 
-                    size="large" 
+              <TableRow
+                    size="large"
                     theme={this.theme}
                 >
                 <TableCell>
@@ -127,22 +129,22 @@ export default class Row extends React.Component {
                 </TableCell>
                 <TableCell
                   align="center">
-                  <Link 
-                    href={`/item/${this.state.row.row.item}`}
+                  <NavLink
+                    to={`/item/${this.state.row.row.item}`}
                     >
                     <Button
                         variant="outlined"
                         color="primary">
                         review
                     </Button>
-                  </Link>
+                  </NavLink>
                 </TableCell>
                 <TableCell
                   align="center">
                   {StyledChip}
                 </TableCell>
                 <TableCell>
-                <Link  
+                <Link
                   href={`https://mm-stage.dfci.harvard.edu/curate/${this.state.row.row.item}`}
                 >
                   <BiCloudDownload size="30">
@@ -168,17 +170,17 @@ export default class Row extends React.Component {
                                     <TableRow key={index}>
                                     {Object.keys(items).map((key)=> {
                                         return (
-                                           
+
                                             <TableCell key={key} >
                                                 {items[key]}
                                             </TableCell>
-                                            
-                                        )  
+
+                                        )
                                     })}
                                     </TableRow>
                                 )
                             })}
-                       
+
                         </TableBody>
                       </Table>
                     </Box>

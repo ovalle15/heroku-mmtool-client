@@ -13,11 +13,12 @@ app.use(bodyParser.json());
 
 if (process.env.NODE_ENV === 'production') {
     console.log("env ====> ", process.env.NODE_ENV)
-    app.use(express.static('client/build'))
+    app.use(express.static('client-side/build'))
 
     app.get('/', (req, res) => {
         // res.send('Hello World!');
-        res.sendFile(path.resolve(__dirname, "client" , "build" , "index.html"))
+        console.log("dir ===>", path.resolve(__dirname, "client-side" , "build" , "index.html"))
+        res.sendFile(path.resolve(__dirname, "client-side" , "build" , "index.html"))
     });
 }
 

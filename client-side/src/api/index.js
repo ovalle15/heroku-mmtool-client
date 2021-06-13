@@ -3,8 +3,8 @@ import axios from 'axios';
 
 
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api',
-    hostname: 'http://localhost:5000/',
+    baseURL: 'https://mernmanagement.herokuapp.com/api',
+    hostname: 'https://mernmanagement.herokuapp.com/',
     httpsAgent: https.Agent({
         rejectUnauthorized: false,
     }),

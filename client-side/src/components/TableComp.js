@@ -62,9 +62,11 @@ class TableComp extends React.Component {
             const newRow = {history: [], item: input, status: "", updatedAt: this.formatDate()}
             console.log("This is new row", newRow)
             console.log("this.state.rows ===>", this.state.rows)
-            this.state.rows ? this.state.rows.push(newRow) : this.state.rows = [newRow]
+            this.state.rows ? this.state.rows.push(newRow) : this.state.rows = []
             console.log("this is state rows after check===>", this.state.rows)
-            // this.state.rows.push(newRow)
+            this.state.rows.push(newRow)
+            console.log("this is state rows after push===>", this.state.rows)
+
             this.setState({rows: this.state.rows})
             const newItem = api.insertItem(newRow);
             return newItem.then(resp => {

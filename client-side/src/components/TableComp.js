@@ -76,7 +76,6 @@ class TableComp extends React.Component {
         }
     }
     render() {
-
         return (
             <div>
                 <div>
@@ -85,9 +84,9 @@ class TableComp extends React.Component {
                 <TableContainer>
                     <Table aria-label="collapsible table">
                         <TableBody>
-                        {this.state.rows.map((row) => (
+                        { this.state.rows ? this.state.rows.map((row) => (
                             <Row key={row.item} row={row} />
-                        )) || {}
+                        )) : {}
                         }
                         </TableBody>
                     </Table>

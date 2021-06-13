@@ -145,7 +145,7 @@ export default class Row extends React.Component {
                 </TableCell>
                 <TableCell>
                 <Link
-                  href={`https://mm-stage.dfci.harvard.edu/curate/${this.state.row.row.item}`}
+                  href={`https://management-mern-app.herokuapp.com/`}
                 >
                   <BiCloudDownload size="30">
                   </BiCloudDownload>

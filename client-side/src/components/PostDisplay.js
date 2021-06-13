@@ -50,11 +50,11 @@ class PostDisplay extends Component {
         return item.then(resp => {
             const discussionItem = resp.data.item;
             this.setState({
-                dropDownStatus: discussionItem.status, 
+                dropDownStatus: discussionItem.status,
                 history : discussionItem.history
             })
         })
-    }  
+    }
     formatDate() {
         const newDate = new Date();
         var month = '' + ("0" + (newDate.getMonth() + 1)).slice(-2);
@@ -70,8 +70,8 @@ class PostDisplay extends Component {
         }
         var ampm = hour >= 12 ? 'pm': 'am';
         hour = hour % 12;
-        var finalDateTime = [month, day, year].join('/') + 
-        " " + hour + ":" + minutes + " " + ampm 
+        var finalDateTime = [month, day, year].join('/') +
+        " " + hour + ":" + minutes + " " + ampm
         console.log("This finalDate", finalDateTime)
         return finalDateTime
     }
@@ -80,9 +80,9 @@ class PostDisplay extends Component {
         newStateFinal.posts.push(newPostBody)
         this.state.history.push(newStateFinal)
         this.setState({history: this.state.history})
-        const objectToUpdate = { 
-            item: this.props.children[1], 
-            status: this.state.dropDownStatus, 
+        const objectToUpdate = {
+            item: this.props.children[1],
+            status: this.state.dropDownStatus,
             history: this.state.history
         }
         this.updateStatus(objectToUpdate)
@@ -110,13 +110,13 @@ class PostDisplay extends Component {
     }
     _handleChange(e) {
         this.setState({dropDownStatus : e.target.value})
-        const objectToUpdate = { 
-            item: this.props.children[1], 
-            status: e.target.value, 
+        const objectToUpdate = {
+            item: this.props.children[1],
+            status: e.target.value,
             history: this.state.history
         }
-        this.updateStatus(objectToUpdate); 
-    }  
+        this.updateStatus(objectToUpdate);
+    }
     render(){
         return (
             <div>
@@ -124,41 +124,41 @@ class PostDisplay extends Component {
                 <h3>Protocol Number : {this.props.children[1]} </h3>
                 <br></br>
                 <div className="features_">
-                    <Button 
+                    <Button
                         variant="outlined"
-                        color="secondary" 
-                        href={`https://ctportal.partners.org/protocollookup_show.asp?protid=${this.props.children[1]}`}
+                        color="secondary"
+                        href={`https://management-mern-app.herokuapp.com/`}
                         target="_blank"
                         >
-                        OncPro  
+                        OncPro
                     </Button>
                     &nbsp;
-                    <Button 
-                        variant="outlined" 
-                        color="secondary" 
-                        href={`https://matchminer.dfci.harvard.edu/#/clinicaltrials/${this.props.children[1]}`}
+                    <Button
+                        variant="outlined"
+                        color="secondary"
+                        href={`https://management-mern-app.herokuapp.com/`}
                         target="_blank"
-                        > 
+                        >
                         Matchminer
                     </Button>
                     &nbsp;
                     <Button
                         variant="outlined"
-                        color="secondary" 
-                        href={`https://mm-stage.dfci.harvard.edu//#/clinicaltrials/${this.props.children[1]}`}
+                        color="secondary"
+                        href={`https://management-mern-app.herokuapp.com/`}
                         target="_blank"
-                        > 
+                        >
                         Staging
                     </Button>
                 </div>
                 <FormControl style={{
-                    minWidth: 150, 
-                    marginTop: "2%", 
-                    float: 'right', 
-                    marginBottom: "2%", 
+                    minWidth: 150,
+                    marginTop: "2%",
+                    float: 'right',
+                    marginBottom: "2%",
                     marginRight: "85%"}}>
-                    <InputLabel> Status </InputLabel> 
-                    <Select 
+                    <InputLabel> Status </InputLabel>
+                    <Select
                         value={this.state.dropDownStatus}
                         defaultValue = {this.state.dropDownStatus}
                         labelId="open-select-label"
@@ -177,7 +177,7 @@ class PostDisplay extends Component {
                         <ul key={index}>
                         {Object.keys(items).map((key) => {
                             return (
-                                <div className="panel panel-default post-body" > 
+                                <div className="panel panel-default post-body" >
                                     <div  className="panel-body" key={key + index} >{items[key]}</div>
                                 </div>
                             )
@@ -185,7 +185,7 @@ class PostDisplay extends Component {
                         </ul>
                     )
                 })}
-                <PostEditor addPost={this.addPost}></PostEditor>  
+                <PostEditor addPost={this.addPost}></PostEditor>
                 </div>
             </div>
         )

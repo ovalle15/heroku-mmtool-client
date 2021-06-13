@@ -8,7 +8,7 @@ import {
 } from "./types";
 
 // TODO: dynamically set baseUrl from .env or current environment (for instance, variable from hosting environment)
-const baseUrl = "http://localhost:5000";
+const baseUrl = "https://mernmanagement.herokuapp.com" || "http://localhost:5000";
 
 // Register User
 export const registerUser = (userData, history) => dispatch => {

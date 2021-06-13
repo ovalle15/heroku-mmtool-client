@@ -61,6 +61,7 @@ class TableComp extends React.Component {
             console.log("This is input", input);
             const newRow = {history: [], item: input, status: "", updatedAt: this.formatDate()}
             console.log("This is new row", newRow)
+            console.log("this.state.rows ===>", this.state.rows)
             this.state.rows.push(newRow)
             this.setState({rows: this.state.rows})
             const newItem = api.insertItem(newRow);

@@ -9,7 +9,7 @@
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "node index.js",
-      "build": "cd client/ && yarn install && yarn run build"
+      "build": "cd client-side/ && yarn install && yarn run build"
     },
     "keywords": [],
     "author": "Andrea Ovalle",
@@ -40,6 +40,6 @@
     },
     "cacheDirectories": [
       "node_modules",
-      "client/node_modules"
+      "client-side/node_modules"
     ]
   }

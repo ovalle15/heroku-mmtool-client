@@ -11,12 +11,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(bodyParser.json());
 
+
+
 if (process.env.NODE_ENV === 'production') {
     console.log("env ====> ", process.env.NODE_ENV)
-    app.use(express.static('client-side/build'))
+
+    app.use(express.static('client-side/build') , (req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*');
+        next();
+      });
 
     app.get('/', (req, res) => {
-        // res.send('Hello World!');
+
         console.log("dir ===>", path.resolve(__dirname, "client-side" , "build" , "index.html"))
         res.sendFile(path.resolve(__dirname, "client-side" , "build" , "index.html"))
     });

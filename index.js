@@ -16,9 +16,7 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'production') {
     console.log("env ====> ", process.env.NODE_ENV)
 
-    app.use(express.static('client-side/build') , (req, res, next) => {
-        next();
-      });
+    app.use(express.static('client-side/build'));
 
     app.get('/', (req, res) => {
 

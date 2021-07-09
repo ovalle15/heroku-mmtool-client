@@ -51,7 +51,7 @@ onSubmit = e => {
         password: this.state.password
       };
       this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
-      console.log("this is user data ====>" ,userData);
+      console.log("this is user data ====>" ,userData.email);
   };
 render() {
     const { errors } = this.state;

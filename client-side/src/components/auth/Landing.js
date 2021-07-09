@@ -13,7 +13,7 @@ const theme = createMuiTheme({
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "75vh", width: "100vh"}} className="container valign-wrapper">
+      <div style={{ height: "100vh", width: "100vh"}} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
             <h2>
